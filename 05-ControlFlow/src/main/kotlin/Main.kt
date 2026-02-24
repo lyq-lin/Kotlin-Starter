@@ -23,7 +23,8 @@ fun main() {
 
     val list = listOf(5,456,48,156,8465,134,864,6,4616,153,1,6,16,51,89,631,4)
 
-    for (index in 0..list.count() step 2) {
+    // 注意：遍历下标要用 until，避免访问到 count() 这个越界下标。
+    for (index in 0 until list.count() step 2) {
         println(list[index])
     }
 
