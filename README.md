@@ -39,3 +39,29 @@ Kotlin-starter/
 
 - JDK 17+
 - kotlinc
+
+
+## IDEA 运行报错排查（`MainKt` 找不到）
+
+如果你看到：`Could not find or load main class MainKt`，通常是 **Run Configuration 没有绑定到模块 classpath** 或 **没有编译输出目录**。
+
+请按下面检查：
+
+1. **重新导入项目**
+   - 在 IDEA 中关闭项目后，重新从仓库根目录 `Kotlin-starter` 打开。
+   - 确认 Project 视图下能看到 `.idea/modules.xml` 里的全部模块。
+
+2. **检查 SDK**
+   - `File -> Project Structure -> Project`
+   - `Project SDK` 设为你的本地 JDK（你当前是 JDK 25，则选 25）。
+
+3. **检查 Run Configuration**
+   - `Run -> Edit Configurations...`
+   - `Main class` 设为 `MainKt`（当前示例为顶层 `main` 函数）。
+   - **Use classpath of module** 必须选择你正在运行的模块（例如 `01-BasicsRunner`）。
+
+4. **先 Build 再 Run**
+   - 先执行 `Build -> Build Project`。
+   - 再运行 `MainKt`。
+
+仓库已提供 `.idea/misc.xml` 与 `.idea/compiler.xml`，默认把编译输出放到根目录 `out/`，并将项目 SDK 对齐到 IDEA 配置中的 JDK（当前仓库默认 25，可按你本地环境调整）。
