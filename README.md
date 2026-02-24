@@ -1,51 +1,56 @@
-# Kotlin 从 0 到 1（原子化多项目）
+# Kotlin-starter（一个根项目 + 多模块）
 
-你提的方向完全正确：**按知识点拆成多个独立项目**，会比“一个项目塞全部类”更清晰。
+你说得对：在 IDEA 里更常见、也更好管理的方式是 **一个根项目包含多个模块**。
 
-## 项目目录（推荐学习顺序）
+本仓库现在已改成：根项目 `Kotlin-starter` + `modules/*` 多模块结构，并清理了旧的 `projects/*` 结构。
+
+## 目录结构
 
 ```text
-projects/
-├── 01-BasicsRunner
-├── 02-VariablesAndTypes
-├── 03-Modifiers
-├── 04-Functions
-├── 05-ControlFlow
-├── 06-ClassesAndDataClasses
-├── 07-Collections
-├── 08-NullSafety
-├── 09-Extensions
-├── 10-EnumsSealedResult
-├── 11-LambdaGenericsScopes
-├── 12-PracticalScenarios
-├── 13-ImportantPatterns
-├── 14-ai-cli
-├── 15-web-api-demo
-└── 16-kmp-demo
+Kotlin-starter/
+├── modules/
+│   ├── 01-BasicsRunner
+│   ├── 02-VariablesAndTypes
+│   ├── 03-Modifiers
+│   ├── 04-Functions
+│   ├── 05-ControlFlow
+│   ├── 06-ClassesAndDataClasses
+│   ├── 07-Collections
+│   ├── 08-NullSafety
+│   ├── 09-Extensions
+│   ├── 10-EnumsSealedResult
+│   ├── 11-LambdaGenericsScopes
+│   ├── 12-PracticalScenarios
+│   ├── 13-ImportantPatterns
+│   ├── 14-ai-cli
+│   ├── 15-web-api-demo
+│   └── 16-kmp-demo
+├── scripts/
+└── .idea/
 ```
 
-每个编号项目都可单独 `build/run`，互不依赖，便于你按主题逐个学习。
+## IDEA 使用方式
 
-## 运行方式（纯 Kotlin + JVM）
+1. 用 IDEA 打开仓库根目录 `Kotlin-starter`。
+2. 你会看到这是一个根工程，`modules/` 下每个目录是独立学习模块。
+3. 每个模块都可单独运行：
+   - `modules/<module>/scripts/build.sh`
+   - `modules/<module>/scripts/run.sh`
 
-前置：JDK 17+ 与 `kotlinc`。
+## 根目录快捷命令
 
 ```bash
-# 运行学习导航
-./projects/01-BasicsRunner/scripts/run.sh
+# 构建所有可构建模块
+./scripts/build-jar.sh
 
-# 按主题运行
-./projects/06-ClassesAndDataClasses/scripts/run.sh
-./projects/10-EnumsSealedResult/scripts/run.sh
+# 跑学习导航
+./scripts/run-basics.sh
 
-# 运行 AI CLI
-./projects/14-ai-cli/scripts/run.sh
-
-# 运行 Web API demo
-./projects/15-web-api-demo/scripts/run.sh
-# 打开 http://localhost:8080/health
+# 跑 AI CLI
+./scripts/run-ai.sh
 ```
 
-## 关于 KMP
+## 环境
 
-`16-kmp-demo` 先提供结构和迁移建议（README），用于指导你下一步从 JVM 示例迁移到多平台项目。
+- JDK 17+
+- kotlinc
