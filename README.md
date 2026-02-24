@@ -1,10 +1,10 @@
 # Kotlin 完全入门（0 到 1）+ Koog AI CLI Demo（无 Gradle 版）
 
-你提到不需要 Gradle，这个版本改成 **纯 Kotlin/JVM 原生编译**：
+你提到希望“持续补充案例，并带注释解释场景/用法”，本版本重点做了这件事：
 
-- 使用 `kotlinc` 编译
-- 使用 `java -jar` 运行
-- 使用脚本执行基础测试
+- 每个知识点尽量提供**业务化场景说明**（不是只讲语法）
+- 示例函数命名尽量可读（看名字就知道要解决什么）
+- 手工测试增加“用例式断言”，可当作学习 checklist
 
 ---
 
@@ -12,8 +12,6 @@
 
 - JDK 17+
 - Kotlin 编译器 `kotlinc`
-
-可检查：
 
 ```bash
 java -version
@@ -30,8 +28,6 @@ kotlinc -version
 ./scripts/build-jar.sh
 ```
 
-产物：`out/kotlin-starter.jar`
-
 ### 2.2 运行语法入门 demo
 
 ```bash
@@ -47,30 +43,34 @@ export KOOG_BASE_URL="https://api.openai.com/v1"
 ./scripts/run-ai.sh
 ```
 
-输入 `exit` 退出。
-
 ---
 
-## 3. 从 0 到 1 学习路线（按文件）
+## 3. 已覆盖知识点 + 对应“场景”
 
-1. `src/main/kotlin/basics/VariablesAndTypes.kt`：变量与类型
-2. `src/main/kotlin/basics/ModifiersAndVisibility.kt`：修饰符与可见性
-3. `src/main/kotlin/basics/Functions.kt`：函数、默认参数、扩展函数
-4. `src/main/kotlin/basics/ControlFlow.kt`：分支与循环
-5. `src/main/kotlin/basics/ClassesAndDataClasses.kt`：类/数据类/接口/object(静态风格)
-6. `src/main/kotlin/basics/Collections.kt`：集合
-7. `src/main/kotlin/basics/NullSafety.kt`：空安全
-8. `src/main/kotlin/basics/Extensions.kt`：扩展函数
+1. 变量与类型：基础数据组织
+2. 修饰符/可见性：API 暴露边界控制
+3. 函数与扩展函数：复用逻辑，减少重复代码
+4. 分支与循环：规则判断、批处理
+5. 类/继承/接口/object：建模与抽象
+6. 集合处理：日志/数据聚合分析（`groupBy` / `mapValues`）
+7. 空安全：配置读取与兜底
+8. enum + sealed：环境分流、成功失败建模
+9. 泛型 + lambda + scope function：通用工具、链式数据处理、对象就地更新
+10. 实战场景案例：订单金额计算、用户接口结果处理
 
 入口：`src/main/kotlin/basics/BasicsRunner.kt`
 
 ---
 
-## 4. AI CLI 与语法知识映射
+## 4. 重点新增案例（建议先看）
 
-- `src/main/kotlin/cli/Config.kt`：环境变量读取与默认值
-- `src/main/kotlin/cli/AiClient.kt`：接口抽象（可替换真实 Koog SDK）
-- `src/main/kotlin/cli/AiCliApp.kt`：循环输入、异常处理
+- `PracticalScenarios.kt`
+  - `calculateOrder()`：满减/折扣规则演示
+  - `fetchUserNameById()`：返回 `ApiResult` 而不是直接抛异常
+- `Collections.kt`
+  - `topLogLevels()`：日志分组计数
+- `NullSafety.kt`
+  - `parseTimeoutMs()`：可空配置解析 + 默认值
 
 ---
 
@@ -82,19 +82,14 @@ export KOOG_BASE_URL="https://api.openai.com/v1"
 
 测试入口：`src/test/kotlin/ManualTests.kt`
 
-当前覆盖：
-- 扩展函数
-- 默认参数
-- 分支/循环
-- 修饰符/override
-- object 静态常量
+你可以把这个文件当作“学习清单”：每个断言都是一个可验证知识点。
 
 ---
 
-## 6. 后续接入真实 Koog SDK
+## 6. 下一步还可继续补充
 
-当前 `MockKoogStyleClient` 是教学占位实现。接入真实 SDK 的步骤：
-
-1. 增加 SDK 依赖（如你自己的编译链：手工 classpath 或 Maven/Gradle 均可）
-2. 新建 `KoogSdkClient : AiClient`
-3. 在 `AiCliApp` 中替换默认 client
+- 协程与并发（超时/取消/结构化并发）
+- 序列化（`kotlinx.serialization`）
+- 文件 IO、日志规范
+- 分层架构与错误码体系
+- 更贴近生产的 CLI 命令解析

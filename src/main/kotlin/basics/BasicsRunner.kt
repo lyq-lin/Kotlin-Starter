@@ -10,5 +10,8 @@ fun runAllBasics() {
     demoCollections()
     demoNullSafety()
     demoExtensions()
+    demoEnumsSealedAndResult()
+    demoLambdaGenericsAndScopes()
+    demoPracticalScenarios()
     println("=== Kotlin 基础语法演示结束 ===")
 }
