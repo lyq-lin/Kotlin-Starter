@@ -19,14 +19,21 @@ fun log(message: String): Unit {
     println("[LOG] $message")
 }
 
+fun debug(message: String){
+    println("[DEBUG] $message")
+}
+
 fun main() {
     // 具名参数：避免多参数时位置混淆
     println(greet(name = "Kotlin"))
     println(greet(name = "Dev", prefix = "Hello"))
 
     println("sum=" + sum(1, 2, 3, 4))
+
     // 和 "Go".repeat(3) 等价，只是写法更像一句话。
     println(3 times "Go")
 
     log("functions demo done")
+
+    debug("functions demo done")
 }
