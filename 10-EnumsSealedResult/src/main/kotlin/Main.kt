@@ -13,8 +13,14 @@ fun endpoint(env: Env): String = when (env) {
     Env.PROD -> "https://example.com"
 }
 
+// sealed + when 的优势：分支可穷尽，不需要 else。
+fun render(result: ApiResult): String = when (result) {
+    is ApiResult.Success -> "OK: ${result.data}"
+    is ApiResult.Failure -> "ERR: ${result.reason}"
+}
+
 fun main() {
     println(endpoint(Env.DEV))
-    val result: ApiResult = ApiResult.Success("ok")
-    println(result)
+    println(render(ApiResult.Success("ok")))
+    println(render(ApiResult.Failure("timeout")))
 }

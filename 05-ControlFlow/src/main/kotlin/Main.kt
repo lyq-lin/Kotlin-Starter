@@ -8,10 +8,21 @@ fun describeScore(score: Int): String = when {
 }
 
 fun main() {
-    for (i in 1..5) {
-        if (i == 3) continue
+    // 区间 + 步长 + continue
+    for (i in 1..7 step 2) {
+        if (i == 5) continue
         print("$i ")
     }
     println()
-    println("score=86 -> ${describeScore(86)}")
+
+    // downTo 倒序循环
+    for (i in 3 downTo 1) {
+        print("$i ")
+    }
+    println()
+
+    // when 作为表达式
+    val score = 86
+    val level = describeScore(score)
+    println("score=$score -> $level")
 }
