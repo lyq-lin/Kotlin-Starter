@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -euo pipefail
-./projects/01-basics/scripts/run.sh
+./projects/01-BasicsRunner/scripts/run.sh

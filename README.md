@@ -1,95 +1,51 @@
-# Kotlin 完全入门仓库（多项目结构）
+# Kotlin 从 0 到 1（原子化多项目）
 
-你提的建议非常好：**一个仓库里拆多个项目/文件夹**，可读性更高、学习路径更原子化。
+你提的方向完全正确：**按知识点拆成多个独立项目**，会比“一个项目塞全部类”更清晰。
 
-我已经把仓库重构成了多项目结构：
+## 项目目录（推荐学习顺序）
 
 ```text
 projects/
-├── 01-basics/      # 纯 Kotlin 语法与日常开发案例
-└── 02-ai-cli/      # Koog 风格 AI CLI（可替换真实 SDK）
+├── 01-BasicsRunner
+├── 02-VariablesAndTypes
+├── 03-Modifiers
+├── 04-Functions
+├── 05-ControlFlow
+├── 06-ClassesAndDataClasses
+├── 07-Collections
+├── 08-NullSafety
+├── 09-Extensions
+├── 10-EnumsSealedResult
+├── 11-LambdaGenericsScopes
+├── 12-PracticalScenarios
+├── 13-ImportantPatterns
+├── 14-ai-cli
+├── 15-web-api-demo
+└── 16-kmp-demo
 ```
 
----
+每个编号项目都可单独 `build/run`，互不依赖，便于你按主题逐个学习。
 
-## 为什么拆分更好
+## 运行方式（纯 Kotlin + JVM）
 
-- **原子化学习**：先学 `01-basics`，再看 `02-ai-cli`，避免一上来被太多概念干扰。
-- **职责清晰**：语法示例和应用示例解耦，不互相污染。
-- **可扩展**：后续你可以继续新增 `03-coroutines`、`04-serialization` 等目录。
-
----
-
-## 1) 项目一：`01-basics`
-
-路径：`projects/01-basics`
-
-包含：
-- 变量/类型、修饰符、函数、分支循环
-- 类/接口/object、集合、空安全、扩展函数
-- enum + sealed、泛型 + lambda + scope functions
-- 实战案例（订单计算、接口结果处理、日志聚合、配置兜底）
-- 重要模式（Result/runCatching、Sequence、委托、lazy）
-
-运行：
+前置：JDK 17+ 与 `kotlinc`。
 
 ```bash
-./projects/01-basics/scripts/run.sh
+# 运行学习导航
+./projects/01-BasicsRunner/scripts/run.sh
+
+# 按主题运行
+./projects/06-ClassesAndDataClasses/scripts/run.sh
+./projects/10-EnumsSealedResult/scripts/run.sh
+
+# 运行 AI CLI
+./projects/14-ai-cli/scripts/run.sh
+
+# 运行 Web API demo
+./projects/15-web-api-demo/scripts/run.sh
+# 打开 http://localhost:8080/health
 ```
 
-测试：
+## 关于 KMP
 
-```bash
-./projects/01-basics/scripts/test.sh
-```
-
----
-
-## 2) 项目二：`02-ai-cli`
-
-路径：`projects/02-ai-cli`
-
-包含：
-- `AiClient` 接口（便于后续替换真实 Koog SDK）
-- `AiCliApp` 交互循环
-- `Config` 环境变量读取（`KOOG_API_KEY` / `KOOG_MODEL` / `KOOG_BASE_URL`）
-
-运行：
-
-```bash
-export KOOG_API_KEY="your_api_key"
-export KOOG_MODEL="gpt-4o-mini"
-export KOOG_BASE_URL="https://api.openai.com/v1"
-./projects/02-ai-cli/scripts/run.sh
-```
-
----
-
-## 3) 根目录快捷脚本（聚合入口）
-
-- `./scripts/build-jar.sh`：构建两个项目
-- `./scripts/run-basics.sh`：运行 `01-basics`
-- `./scripts/run-ai.sh`：运行 `02-ai-cli`
-- `./scripts/test.sh`：运行 `01-basics` 手工测试
-
----
-
-## 4) 环境要求
-
-- JDK 17+
-- `kotlinc`
-
-```bash
-java -version
-kotlinc -version
-```
-
----
-
-## 5) 下一步建议（继续多项目化）
-
-你可以按学习阶段继续扩展：
-
-- `projects/03-coroutines`：协程、取消、超时、结构化并发
-- `projects/04-serialization`：JSON 序列化与反序列化
-- `projects/05-testing`：mock、分层测试、测试数据工厂
+`16-kmp-demo` 先提供结构和迁移建议（README），用于指导你下一步从 JVM 示例迁移到多平台项目。

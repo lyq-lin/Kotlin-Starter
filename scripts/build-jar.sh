@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-./projects/01-basics/scripts/build.sh
-./projects/02-ai-cli/scripts/build.sh
+for p in projects/0* projects/1*; do
+  [ -d "$p/scripts" ] || continue
+  [ -x "$p/scripts/build.sh" ] || continue
+  echo "==> building $p"
+  "$p/scripts/build.sh"
+done
