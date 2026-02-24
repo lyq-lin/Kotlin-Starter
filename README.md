@@ -76,23 +76,6 @@ Kotlin-Starter/
 
 ---
 
-## 常见问题
-
-### 1) 运行时报 `Could not find or load main class MainKt`
-
-通常是 Run Configuration 没绑定到正确模块：
-
-- 打开 `Run -> Edit Configurations...`
-- 确认 `Main class` 为对应包名下的 `MainKt`（如 `m01_basicsrunner.MainKt`）
-- 确认 `Use classpath of module` 指向当前模块
-- 执行一次 `Build -> Build Project` 后再运行
-
-### 2) 为什么没有 `scripts/build.sh` / `scripts/run.sh`
-
-本仓库已统一为 **IDEA 优先** 工作流，避免维护重复的脚本入口。
-
----
-
 ## 贡献建议
 
 欢迎通过 Issue / PR 提交：
