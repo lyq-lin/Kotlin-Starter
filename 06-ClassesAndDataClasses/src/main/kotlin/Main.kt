@@ -36,6 +36,11 @@ fun main() {
     val (id, name) = vipUser
 
     val msg = WelcomeCard(vipUser)
+
+    val userMsg = WelcomeCard(user)
+    println(userMsg.render())
+    println("user == vipUser? : ${vipUser == user}")
+
     val cardFromFactory = WelcomeCard.from(2, "Bob")
     println(msg.render())
     println(cardFromFactory.render())
