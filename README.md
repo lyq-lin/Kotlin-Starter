@@ -32,8 +32,8 @@ Kotlin-starter/
 1. 用 IDEA 打开仓库根目录 `Kotlin-starter`。
 2. 根目录下每个编号目录就是独立学习模块。
 3. 每个模块都可单独运行：
-   - `<module>/scripts/build.sh`
-   - `<module>/scripts/run.sh`
+   - 在 IDEA 右上角选择对应模块的 Run Configuration（仓库已内置 `.idea/runConfigurations/*.xml`）。
+   - 或在模块中直接运行 `src/main/kotlin/Main.kt` 对应入口。
 
 ## 环境
 
