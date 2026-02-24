@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="05-ControlFlow" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m05_controlflow.MainKt" />
+    <module name="05-ControlFlow" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/05-ControlFlow" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

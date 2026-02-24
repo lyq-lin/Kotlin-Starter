@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="08-NullSafety" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m08_nullsafety.MainKt" />
+    <module name="08-NullSafety" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/08-NullSafety" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

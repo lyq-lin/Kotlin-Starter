@@ -57,7 +57,7 @@ Kotlin-starter/
 
 3. **检查 Run Configuration**
    - `Run -> Edit Configurations...`
-   - `Main class` 设为 `MainKt`（当前示例为顶层 `main` 函数）。
+   - `Main class` 请使用对应模块的完整类名（例如 `m01_basicsrunner.MainKt`）。
    - **Use classpath of module** 必须选择你正在运行的模块（例如 `01-BasicsRunner`）。
 
 4. **先 Build 再 Run**
@@ -65,3 +65,8 @@ Kotlin-starter/
    - 再运行 `MainKt`。
 
 仓库已提供 `.idea/misc.xml` 与 `.idea/compiler.xml`，默认把编译输出放到根目录 `out/`，并将项目 SDK 对齐到 IDEA 配置中的 JDK（当前仓库默认 25，可按你本地环境调整）。
+
+
+5. **直接使用仓库内置 Run Configurations（推荐）**
+   - 仓库提供了 `.idea/runConfigurations/*.xml`，每个模块都有单独配置。
+   - 重新打开项目后，直接在右上角选择模块名（如 `01-BasicsRunner`）运行即可。

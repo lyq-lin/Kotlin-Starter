@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="01-BasicsRunner" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m01_basicsrunner.MainKt" />
+    <module name="01-BasicsRunner" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/01-BasicsRunner" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,3 +1,5 @@
+package m12_practicalscenarios
+
 data class Order(val originalPrice: Double, val discountRate: Double)
 
 fun finalPrice(order: Order): Double {

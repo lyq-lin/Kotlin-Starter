@@ -1,3 +1,5 @@
+package m09_extensions
+
 fun String.maskEmail(): String {
     val at = indexOf("@")
     if (at <= 1) return this

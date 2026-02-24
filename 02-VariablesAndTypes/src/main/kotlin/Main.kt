@@ -1,3 +1,5 @@
+package m02_variablesandtypes
+
 const val APP_NAME: String = "Kotlin Starter"
 
 fun main() {

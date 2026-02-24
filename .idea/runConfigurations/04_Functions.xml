@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="04-Functions" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m04_functions.MainKt" />
+    <module name="04-Functions" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04-Functions" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

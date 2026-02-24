@@ -1,3 +1,5 @@
+package m06_classesanddataclasses
+
 interface Renderable { fun render(): String }
 
 data class User(val id: Long, val name: String)

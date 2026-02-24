@@ -1,3 +1,5 @@
+package m05_controlflow
+
 fun describeScore(score: Int): String = when {
     score >= 90 -> "A"
     score >= 80 -> "B"

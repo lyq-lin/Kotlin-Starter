@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="10-EnumsSealedResult" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m10_enumssealedresult.MainKt" />
+    <module name="10-EnumsSealedResult" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10-EnumsSealedResult" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

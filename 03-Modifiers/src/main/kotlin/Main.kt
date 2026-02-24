@@ -1,3 +1,5 @@
+package m03_modifiers
+
 open class Animal(protected val name: String) {
     open fun speak(): String = "$name makes a sound"
 }

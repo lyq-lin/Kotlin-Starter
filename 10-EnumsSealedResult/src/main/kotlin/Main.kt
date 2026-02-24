@@ -1,3 +1,5 @@
+package m10_enumssealedresult
+
 enum class Env { DEV, STAGING, PROD }
 
 sealed class ApiResult {

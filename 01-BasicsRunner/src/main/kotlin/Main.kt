@@ -1,3 +1,5 @@
+package m01_basicsrunner
+
 fun main() {
     println("=== Kotlin 学习导航（Basics Runner）===")
     println("建议顺序：")

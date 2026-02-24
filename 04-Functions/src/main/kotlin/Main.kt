@@ -1,3 +1,5 @@
+package m04_functions
+
 fun greet(name: String, prefix: String = "Hi"): String = "$prefix, $name"
 
 fun sum(vararg nums: Int): Int = nums.sum()

@@ -1,3 +1,5 @@
+package m11_lambdagenericsscopes
+
 fun <T> firstOr(default: T, list: List<T>): T = list.firstOrNull() ?: default
 
 fun main() {
