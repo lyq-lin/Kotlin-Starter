@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/modules/01-BasicsRunner/01-BasicsRunner.iml" filepath="$PROJECT_DIR$/modules/01-BasicsRunner/01-BasicsRunner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/02-VariablesAndTypes/02-VariablesAndTypes.iml" filepath="$PROJECT_DIR$/modules/02-VariablesAndTypes/02-VariablesAndTypes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/03-Modifiers/03-Modifiers.iml" filepath="$PROJECT_DIR$/modules/03-Modifiers/03-Modifiers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/04-Functions/04-Functions.iml" filepath="$PROJECT_DIR$/modules/04-Functions/04-Functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/05-ControlFlow/05-ControlFlow.iml" filepath="$PROJECT_DIR$/modules/05-ControlFlow/05-ControlFlow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/06-ClassesAndDataClasses/06-ClassesAndDataClasses.iml" filepath="$PROJECT_DIR$/modules/06-ClassesAndDataClasses/06-ClassesAndDataClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/07-Collections/07-Collections.iml" filepath="$PROJECT_DIR$/modules/07-Collections/07-Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/08-NullSafety/08-NullSafety.iml" filepath="$PROJECT_DIR$/modules/08-NullSafety/08-NullSafety.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/09-Extensions/09-Extensions.iml" filepath="$PROJECT_DIR$/modules/09-Extensions/09-Extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/10-EnumsSealedResult/10-EnumsSealedResult.iml" filepath="$PROJECT_DIR$/modules/10-EnumsSealedResult/10-EnumsSealedResult.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/11-LambdaGenericsScopes/11-LambdaGenericsScopes.iml" filepath="$PROJECT_DIR$/modules/11-LambdaGenericsScopes/11-LambdaGenericsScopes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/12-PracticalScenarios/12-PracticalScenarios.iml" filepath="$PROJECT_DIR$/modules/12-PracticalScenarios/12-PracticalScenarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/13-ImportantPatterns/13-ImportantPatterns.iml" filepath="$PROJECT_DIR$/modules/13-ImportantPatterns/13-ImportantPatterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/14-ai-cli/14-ai-cli.iml" filepath="$PROJECT_DIR$/modules/14-ai-cli/14-ai-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/15-web-api-demo/15-web-api-demo.iml" filepath="$PROJECT_DIR$/modules/15-web-api-demo/15-web-api-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/16-kmp-demo/16-kmp-demo.iml" filepath="$PROJECT_DIR$/modules/16-kmp-demo/16-kmp-demo.iml" />
+    </modules>
+  </component>
+</project>
