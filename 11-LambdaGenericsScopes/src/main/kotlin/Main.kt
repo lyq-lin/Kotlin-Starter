@@ -22,5 +22,5 @@ fun main() {
     val payload = listOf("a", "b", "c").also { println("size=${it.size}") }
     println(payload)
 
-    println(firstOr(0, emptyList()))
+    println(firstOr(0, scores))
 }
