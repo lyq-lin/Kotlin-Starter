@@ -21,6 +21,12 @@ fun main() {
     }
     println()
 
+    val list = listOf(5,456,48,156,8465,134,864,6,4616,153,1,6,16,51,89,631,4)
+
+    for (index in 0..list.count() step 2) {
+        println(list[index])
+    }
+
     // when 作为表达式
     val score = 86
     val level = describeScore(score)
