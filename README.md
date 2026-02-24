@@ -1,17 +1,83 @@
-# Kotlin 完全入门（0 到 1）+ Koog AI CLI Demo（无 Gradle 版）
+# Kotlin 完全入门仓库（多项目结构）
 
-你提到希望“持续补充案例，并带注释解释场景/用法”，本版本重点做了这件事：
+你提的建议非常好：**一个仓库里拆多个项目/文件夹**，可读性更高、学习路径更原子化。
 
-- 每个知识点尽量提供**业务化场景说明**（不是只讲语法）
-- 示例函数命名尽量可读（看名字就知道要解决什么）
-- 手工测试增加“用例式断言”，可当作学习 checklist
+我已经把仓库重构成了多项目结构：
+
+```text
+projects/
+├── 01-basics/      # 纯 Kotlin 语法与日常开发案例
+└── 02-ai-cli/      # Koog 风格 AI CLI（可替换真实 SDK）
+```
 
 ---
 
-## 1. 环境要求
+## 为什么拆分更好
+
+- **原子化学习**：先学 `01-basics`，再看 `02-ai-cli`，避免一上来被太多概念干扰。
+- **职责清晰**：语法示例和应用示例解耦，不互相污染。
+- **可扩展**：后续你可以继续新增 `03-coroutines`、`04-serialization` 等目录。
+
+---
+
+## 1) 项目一：`01-basics`
+
+路径：`projects/01-basics`
+
+包含：
+- 变量/类型、修饰符、函数、分支循环
+- 类/接口/object、集合、空安全、扩展函数
+- enum + sealed、泛型 + lambda + scope functions
+- 实战案例（订单计算、接口结果处理、日志聚合、配置兜底）
+- 重要模式（Result/runCatching、Sequence、委托、lazy）
+
+运行：
+
+```bash
+./projects/01-basics/scripts/run.sh
+```
+
+测试：
+
+```bash
+./projects/01-basics/scripts/test.sh
+```
+
+---
+
+## 2) 项目二：`02-ai-cli`
+
+路径：`projects/02-ai-cli`
+
+包含：
+- `AiClient` 接口（便于后续替换真实 Koog SDK）
+- `AiCliApp` 交互循环
+- `Config` 环境变量读取（`KOOG_API_KEY` / `KOOG_MODEL` / `KOOG_BASE_URL`）
+
+运行：
+
+```bash
+export KOOG_API_KEY="your_api_key"
+export KOOG_MODEL="gpt-4o-mini"
+export KOOG_BASE_URL="https://api.openai.com/v1"
+./projects/02-ai-cli/scripts/run.sh
+```
+
+---
+
+## 3) 根目录快捷脚本（聚合入口）
+
+- `./scripts/build-jar.sh`：构建两个项目
+- `./scripts/run-basics.sh`：运行 `01-basics`
+- `./scripts/run-ai.sh`：运行 `02-ai-cli`
+- `./scripts/test.sh`：运行 `01-basics` 手工测试
+
+---
+
+## 4) 环境要求
 
 - JDK 17+
-- Kotlin 编译器 `kotlinc`
+- `kotlinc`
 
 ```bash
 java -version
@@ -20,76 +86,10 @@ kotlinc -version
 
 ---
 
-## 2. 一键运行
+## 5) 下一步建议（继续多项目化）
 
-### 2.1 构建可执行 Jar
+你可以按学习阶段继续扩展：
 
-```bash
-./scripts/build-jar.sh
-```
-
-### 2.2 运行语法入门 demo
-
-```bash
-./scripts/run-basics.sh
-```
-
-### 2.3 运行 Koog 风格 AI CLI
-
-```bash
-export KOOG_API_KEY="your_api_key"
-export KOOG_MODEL="gpt-4o-mini"
-export KOOG_BASE_URL="https://api.openai.com/v1"
-./scripts/run-ai.sh
-```
-
----
-
-## 3. 已覆盖知识点 + 对应“场景”
-
-1. 变量与类型：基础数据组织
-2. 修饰符/可见性：API 暴露边界控制
-3. 函数与扩展函数：复用逻辑，减少重复代码
-4. 分支与循环：规则判断、批处理
-5. 类/继承/接口/object：建模与抽象
-6. 集合处理：日志/数据聚合分析（`groupBy` / `mapValues`）
-7. 空安全：配置读取与兜底
-8. enum + sealed：环境分流、成功失败建模
-9. 泛型 + lambda + scope function：通用工具、链式数据处理、对象就地更新
-10. 实战场景案例：订单金额计算、用户接口结果处理
-
-入口：`src/main/kotlin/basics/BasicsRunner.kt`
-
----
-
-## 4. 重点新增案例（建议先看）
-
-- `PracticalScenarios.kt`
-  - `calculateOrder()`：满减/折扣规则演示
-  - `fetchUserNameById()`：返回 `ApiResult` 而不是直接抛异常
-- `Collections.kt`
-  - `topLogLevels()`：日志分组计数
-- `NullSafety.kt`
-  - `parseTimeoutMs()`：可空配置解析 + 默认值
-
----
-
-## 5. 无 Gradle 测试方式
-
-```bash
-./scripts/test.sh
-```
-
-测试入口：`src/test/kotlin/ManualTests.kt`
-
-你可以把这个文件当作“学习清单”：每个断言都是一个可验证知识点。
-
----
-
-## 6. 下一步还可继续补充
-
-- 协程与并发（超时/取消/结构化并发）
-- 序列化（`kotlinx.serialization`）
-- 文件 IO、日志规范
-- 分层架构与错误码体系
-- 更贴近生产的 CLI 命令解析
+- `projects/03-coroutines`：协程、取消、超时、结构化并发
+- `projects/04-serialization`：JSON 序列化与反序列化
+- `projects/05-testing`：mock、分层测试、测试数据工厂
