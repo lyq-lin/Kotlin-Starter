@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="14-ai-cli" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m14_aicli.MainKt" />
+    <module name="14-ai-cli" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/14-ai-cli" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

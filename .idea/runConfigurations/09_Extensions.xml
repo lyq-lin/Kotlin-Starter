@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="09-Extensions" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m09_extensions.MainKt" />
+    <module name="09-Extensions" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/09-Extensions" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

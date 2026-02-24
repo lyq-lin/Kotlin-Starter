@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="03-Modifiers" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m03_modifiers.MainKt" />
+    <module name="03-Modifiers" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/03-Modifiers" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

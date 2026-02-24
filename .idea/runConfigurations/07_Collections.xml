@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="07-Collections" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m07_collections.MainKt" />
+    <module name="07-Collections" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/07-Collections" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

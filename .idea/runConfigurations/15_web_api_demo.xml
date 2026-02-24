@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="15-web-api-demo" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m15_webapidemo.MainKt" />
+    <module name="15-web-api-demo" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/15-web-api-demo" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="11-LambdaGenericsScopes" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="m11_lambdagenericsscopes.MainKt" />
+    <module name="11-LambdaGenericsScopes" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/11-LambdaGenericsScopes" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
