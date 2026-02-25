@@ -29,7 +29,7 @@
 | 05-ControlFlow | `if` / `when` / `for` / `while` / Elvis `?:` |
 | 06-ClassesAndDataClasses | 类基础、`open`、`object`、`sealed`、`data class` |
 | 07-Collections | `List` / `Map` 与常用集合 API |
-| 08-NullSafety | 空安全与可空类型 |
+| 08-NullSafety | 空安全、`?.`、Elvis `?: run` 兜底 |
 | 09-Extensions | 扩展函数 |
 | 10-EnumsSealedResult | 枚举、密封类与结果建模 |
 | 11-LambdaGenericsScopes | Lambda、泛型、作用域函数 |
