@@ -22,13 +22,13 @@
 
 | 模块 | 主题 |
 |---|---|
-| 01-BasicsRunner | 学习导航与模块入口 |
+| 01-BasicsRunner | 学习导航：按知识点定位模块 |
 | 02-VariablesAndTypes | 变量、类型与属性基础 |
 | 03-Modifiers | 可见性与继承修饰符 |
 | 04-Functions | 函数、默认参数、`vararg`、`infix` |
-| 05-ControlFlow | 条件、循环与 `when` |
-| 06-ClassesAndDataClasses | 类、接口、`data class` |
-| 07-Collections | 集合处理与聚合 |
+| 05-ControlFlow | `if` / `when` / `for` / `while` / Elvis `?:` |
+| 06-ClassesAndDataClasses | 类基础、`open`、`object`、`sealed`、`data class` |
+| 07-Collections | `List` / `Map` 与常用集合 API |
 | 08-NullSafety | 空安全与可空类型 |
 | 09-Extensions | 扩展函数 |
 | 10-EnumsSealedResult | 枚举、密封类与结果建模 |
@@ -38,6 +38,18 @@
 | 14-ai-cli | CLI 示例 |
 | 15-web-api-demo | 轻量 Web API 示例 |
 | 16-kmp-demo | Kotlin Multiplatform 示例 |
+
+---
+
+### 学习设计说明（0x 模块）
+
+- 01-13 模块优先按“**单一知识点可定位**”组织，避免把无关内容堆在一个示例里。
+- 每个模块的 `Main.kt` 都可单独运行，建议按“先看注释目标 -> 再运行输出 -> 最后改参数实验”的方式学习。
+- 若要复习某个语法，请优先通过模块名定位：
+  - 控制流：`05-ControlFlow`
+  - 类层次（`open`/`sealed`/`object`）：`06-ClassesAndDataClasses`、`10-EnumsSealedResult`
+  - 集合：`07-Collections`
+  - 空安全与默认值：`08-NullSafety`
 
 ---
 
