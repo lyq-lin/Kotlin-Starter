@@ -1,5 +1,7 @@
 package m10_enumssealedresult
 
+// 本模块主题：枚举 + sealed 结果建模
+
 enum class Env { DEV, STAGING, PROD }
 
 sealed class ApiResult {
@@ -13,7 +15,6 @@ fun endpoint(env: Env): String = when (env) {
     Env.PROD -> "https://example.com"
 }
 
-// sealed + when 的优势：分支可穷尽，不需要 else。
 fun render(result: ApiResult): String = when (result) {
     is ApiResult.Success -> "OK: ${result.data}"
     is ApiResult.Failure -> "ERR: ${result.reason}"

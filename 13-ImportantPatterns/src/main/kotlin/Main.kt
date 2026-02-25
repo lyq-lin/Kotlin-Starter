@@ -1,5 +1,7 @@
 package m13_importantpatterns
 
+// 本模块主题：常见模式（lazy、Result/runCatching）
+
 class ExpensiveClient {
     init {
         println("ExpensiveClient init once")
@@ -7,14 +9,12 @@ class ExpensiveClient {
 }
 
 class Service {
-    // lazy: 首次访问才初始化，且同一个实例只初始化一次。
     val client by lazy { ExpensiveClient() }
 }
 
 fun safeParseInt(raw: String): Result<Int> = runCatching { raw.toInt() }
 
 fun main() {
-    // Result 链式处理：mapCatching + recover
     val parsed = safeParseInt("12")
         .mapCatching { it * 2 }
         .recover { -1 }
