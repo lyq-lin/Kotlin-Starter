@@ -41,15 +41,25 @@
 
 ---
 
-### 学习设计说明（0x 模块）
+### 学习设计说明（01-13 已统一复查）
 
-- 01-13 模块优先按“**单一知识点可定位**”组织，避免把无关内容堆在一个示例里。
-- 每个模块的 `Main.kt` 都可单独运行，建议按“先看注释目标 -> 再运行输出 -> 最后改参数实验”的方式学习。
-- 若要复习某个语法，请优先通过模块名定位：
+- 01-13 每个模块都以“**一个主主题 + 可运行示例**”组织，便于按模块名快速定位复习。
+- 每个 `Main.kt` 顶部都标注“本模块主题”，先看主题再运行。
+- 推荐复习流程：
+  1. 打开对应模块 `Main.kt` 看注释目标
+  2. 直接运行观察输出
+  3. 改一个参数验证理解（例如阈值、输入值、集合内容）
+- 快速定位：
+  - 变量与属性初始化：`02-VariablesAndTypes`
+  - 修饰符与继承：`03-Modifiers`
+  - 函数语法：`04-Functions`
   - 控制流：`05-ControlFlow`
-  - 类层次（`open`/`sealed`/`object`）：`06-ClassesAndDataClasses`、`10-EnumsSealedResult`
-  - 集合：`07-Collections`
-  - 空安全与默认值：`08-NullSafety`
+  - 类层次（`open`/`sealed`/`object`）：`06-ClassesAndDataClasses`
+  - 集合 API：`07-Collections`
+  - 空安全：`08-NullSafety`
+  - 扩展函数：`09-Extensions`
+  - 枚举 + sealed 结果建模：`10-EnumsSealedResult`
+  - Lambda / 泛型 / 作用域函数：`11-LambdaGenericsScopes`
 
 ---
 

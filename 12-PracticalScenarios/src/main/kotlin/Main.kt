@@ -2,10 +2,11 @@ package m12_practicalscenarios
 
 import java.math.BigDecimal
 
+// 本模块主题：业务小场景（价格计算）
+
 data class Order(val originalPrice: BigDecimal, val discountRate: BigDecimal)
 
 fun finalPrice(order: Order): BigDecimal {
-    // 场景：电商价格计算（先折扣后满减）
     val discounted = order.originalPrice.multiply(BigDecimal.ONE.subtract(order.discountRate))
     return if (discounted >= BigDecimal("200")) discounted.subtract(BigDecimal("20")) else discounted
 }
