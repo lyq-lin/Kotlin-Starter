@@ -1,5 +1,7 @@
 package m11_lambdagenericsscopes
 
+// 本模块主题：Lambda + 泛型函数 + 作用域函数（let/apply/also）
+
 fun <T> firstOr(default: T, list: List<T>): T = list.firstOrNull() ?: default
 
 fun main() {
@@ -9,16 +11,13 @@ fun main() {
         .filter { it >= 40 }
     println(doubled)
 
-    // apply: 返回接收者本身，适合对象配置
     val config = mutableMapOf<String, String>().apply {
         put("model", "gpt-4o-mini")
         put("timeout", "1500")
     }
 
-    // let: 返回 lambda 结果，适合“加工后输出”
     println(config.let { "model=${it["model"]}" })
 
-    // also: 侧重附加动作（如日志），返回接收者
     val payload = listOf("a", "b", "c").also { println("size=${it.size}") }
     println(payload)
 
